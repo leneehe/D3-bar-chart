@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function(e) {
+  var data = [4, 8, 15, 16, 23, 42];
   // var div = document.createElement('div');
   // div.innerHTML = "Hello World!";
   // document.body.appendChild(div);
@@ -15,4 +16,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
   // section.style("background-color", "black");
   var div = section.append("div");
   div.html("Hello, world!");
+
+  //data join -> define the selection to join data -> join the data to selection using selection.data -> enter selection reppresents new data (update and exit are empty) -> instatiate element by appending div to enter section -> set new bar as multiple of 10 and compute style. -> set text content of each bar
+  d3.select(".chart").selectAll("div").data(data).enter().append("div").style("width", function(d) { return d * 10 + "px"; }).text(function(d) {return d; });
 });
